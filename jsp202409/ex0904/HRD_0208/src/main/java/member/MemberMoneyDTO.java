@@ -1,58 +1,33 @@
 package member;
 
-import java.sql.Date;
-
 public class MemberMoneyDTO {
-//	멤버 변수
 	private int custno;
-	private int saleno;
-	private int pcost;
-	private int amount;
+	private String custname;
+	private String grade;
 	private int price;
-	private String pcode;
-	private Date sdate;
 	
-//	게터/세터
 	public int getCustno() {
 		return custno;
 	}
 	public void setCustno(int custno) {
 		this.custno = custno;
 	}
-	public int getSaleno() {
-		return saleno;
+	public String getCustname() {
+		return custname;
 	}
-	public void setSaleno(int saleno) {
-		this.saleno = saleno;
+	public void setCustname(String custname) {
+		this.custname = custname;
 	}
-	public int getPcost() {
-		return pcost;
+	public String getGrade() {
+		return grade;
 	}
-	public void setPcost(int pcost) {
-		this.pcost = pcost;
-	}
-	public int getAmount() {
-		return amount;
-	}
-	public void setAmount(int amount) {
-		this.amount = amount;
+	public void setGrade(String grade) {
+		this.grade = grade;
 	}
 	public int getPrice() {
 		return price;
 	}
 	public void setPrice(int price) {
 		this.price = price;
-	}
-	public String getPcode() {
-		return pcode;
-	}
-	public void setPcode(String pcode) {
-		this.pcode = pcode;
-	}
-	public Date getSdate() {
-		return sdate;
-	}
-	public void setSdate(Date sdate) {
-		this.sdate = sdate;
 	}
 }

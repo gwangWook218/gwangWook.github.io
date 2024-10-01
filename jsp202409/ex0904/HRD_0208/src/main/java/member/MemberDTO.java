@@ -3,7 +3,6 @@ package member;
 import java.sql.Date;
 
 public class MemberDTO {
-//	멤버 변수
 	private int custno;
 	private String custname;
 	private String phone;
@@ -12,7 +11,6 @@ public class MemberDTO {
 	private String grade;
 	private String city;
 	
-//	게터/세터
 	public int getCustno() {
 		return custno;
 	}
