@@ -1,31 +1,27 @@
-<?xml version="1.0" encoding="UTF-8"?>
-<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
 <mapper namespace="Member">
-  <typeAliases type="com.akw.dto.MemberDTO" alias="member"></typeAliases>
-
-  <insert id="save" parameterType="member">
-    INSERT INTO membertbl (custno, custname, phone, address, joindate, grade, city)
-    VALUES (#{custno}, #{custname}, #{phone}, #{address}, #{joindate}, #{grade}, #{city})
-  </insert>
-
-  <select id="findAll" resultType="member">
-    SELECT * FROM membertbl
-  </select>
-
-  <select id="findById" parameterType="int" resultType="member">
-    SELECT custno, custname, phone, address, joindate, grade, city
-    FROM membertbl
-    WHERE custno = #{custno}
-  </select>
-
-  <update id="update" parameterType="member">
-    UPDATE membertbl
-    SET custname = #{custname}, phone = #{phone}, address = #{address}, 
-        joindate = #{joindate}, grade = #{grade}, city = #{city}
-    WHERE custno = #{custno}
-  </update>
-
-  <delete id="delete" parameterType="int">
-    DELETE FROM membertbl WHERE custno = #{custno}
-  </delete>
+	<insert id="save" parameterType="member">
+        insert into membertbl(custno, custname, phone, address, joindate, grade, city)
+        	values(#{custno}, #{custname}, #{phone}, #{address}, #{joindate}, #{grade}, #{city})
+    </insert>
+    <select id="findAll" resultType="member">
+        select * from membertbl 
+    </select>
+    <select id="findById" parameterType="Integer" resultType="member">
+        select custno, custname, phone, address, joindate, grade, city
+        from membertbl 
+        where custno=#{custno}
+    </select>
+    <update id="update">
+        update membertbl 
+        set custno=#{custno}, custname=#{custname}, phone=#{phone}, address=#{address}, 
+        	joindate=#{joindate}, grade=#{grade}, city=#{city} 
+        where custno=#{custno}
+    </update>
+    <delete id="delete" parameterType="Integer">
+        delete from membertbl where custno=#{custno}
+    </delete>
 </mapper>
