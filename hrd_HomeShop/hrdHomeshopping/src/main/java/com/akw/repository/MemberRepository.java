@@ -12,7 +12,7 @@ import com.akw.dto.MemberDTO;
 public class MemberRepository {
 
 	@Autowired
-	private SqlSessionTemplete sql;
+	private SqlSessionTemplate sql;
 	
 	public MemberDTO save(MemberDTO dto) {
 		sql.insert("Member.save", dto);

@@ -28,7 +28,7 @@
     </tr>
     <tr th:each="member: ${memberList}">
       <td th:text="${member.custno}"></td>
-      <td><a th:text="${member.custname}" th:href="@{|/{member.custname}|}"></a></td>
+      <td><a th:text="${member.custname}" th:href="@{|/${member.custno}|}"></a></td>
       <td th:text="${member.phone}"></td>
       <td th:text="${member.address}"></td>
       <td th:text="${member.joindate}"></td>

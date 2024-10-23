@@ -68,7 +68,7 @@ public class HomeController {
 	}
 	
 	@GetMapping("/delete/{custno}")
-	public String delete(@PathVariable("custo") Integer custno) {
+	public String delete(@PathVariable("custno") Integer custno) {
 		memberService.delete(custno);
 		return "redirect:/list";
 	}
