@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="ko" xmlns:th="http://www.thymeleaf.org">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>회원 매출 조회</title>
+  <!-- css -->
+  <link rel="stylesheet" th:href="@{/css/style.css}">
+</head>
+<body>
+  <div class="main">
+    <!-- 페이지 상단 및 메뉴 -->
+    <div th:insert="./header :: header"></div>
+    <section>
+      <h1>인덱스</h1>
+    </section>
+    <table>
+      <tr>
+        <th>회원번호</th>
+        <th>회원이름</th>
+        <th>회원등급</th>
+        <th>회원매출</th>
+      </tr>
+      <tr th:each="money: ${moneyList}">
+        <td th:text="${money.custno}"></td>
+        <td th:text="${money.custname}"></td>
+        <td th:text="${money.grade}"></td>
+        <td th:text="${money.price}"></td>
+      </tr>
+    </table>
+    <!-- 페이지 하단 -->
+    <div th:insert="./footer :: footer"></div>
+  </div>
+</body>
+</html>
